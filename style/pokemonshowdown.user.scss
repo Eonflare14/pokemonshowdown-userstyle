@@ -1,0 +1,193 @@
+/* ==UserStyle==
+@name PS! Tweaks
+@namespace Eon
+@version 1.0.0
+#@var <type> <name>   <label>        <default value>
+@var text   myBorder "Border style" 3px dotted blue
+==/UserStyle==  */
+@-moz-document domain("play.pokemonshowdown.com"), domain("psim.us") {
+    
+    /**Custom Room Names**/
+        .roomtab span::after {
+            text-indent: 0;
+            display: block;
+            line-height: initial;
+        }
+        .tabbar a.button {
+            min-width: 10px;
+        }
+    
+        $replace-rooms: 
+        /**Tours**/
+        "tournaments" "🆃ours",
+        "toursminigames" "🆃MG",
+        "toursplaza" "🆃Plaza",
+        /**Formats**/
+        "othermetas" "OM",
+        "randombattles" "Rand",
+        "anythinggoes" "AG",
+        "overused" "OU",
+        "monotype", "Mono",
+        /*Formats/Natdex*/
+        "ndothertiers" "🅽OT",
+        "nationaldexou" "🅽OU",
+        "nationaldexuu" "🅽UU",
+        "nationaldexmonotype" "🅽Mono",
+        /**Others**/
+        "development" "Dev",
+        "dungeonsdragons" "D&D",
+        "gamecorner" "GC",
+        "healthfitness" "H&F",
+        "pokemongames" "Games",
+        "ruinsofalph" "RoA",
+        "scavengers" "Scav",
+        "tcgtabletop" "Table",
+        "techcode" "Tech",
+        "thehappyplace" "THP",
+        "thelibrary" "Lib",
+        "traineracademy" "TA",
+        "wifi" "WiFi",
+        "boardgames" "BGames",
+        "thecafe" "Cafe";
+
+        @each $tab-link, $replace-text in $replace-rooms {
+            .roomtab[href="/#{$tab-link}"] {
+                span {
+                    font-size: 10px;
+                    display: inline;
+                    
+                    text-indent: -9999px;
+                    line-height: 0;
+                }
+                span::after {
+                    text-indent: 0px;
+                    line-height: 1em;
+                    content: $replace-text;
+                }
+            }
+        }
+        
+    /**Chat**/
+        
+    .chat {
+            & small {
+                font-size: 6pt;
+            }
+            
+            & .utilichart,
+            & .utilichart .result [class$="desccol"] {
+                width: 100%;
+                word-wrap: break-word;
+                white-space: wrap;
+                height: fit-content;
+        }
+    }
+            
+    /**Battle Chat Icons**/
+        
+        .spacer.battle-history + .battle-history small {
+            font-weight: bold;
+            color: #6f81d9;
+            &::before {
+                content: "☀ ";
+            }
+        }
+        
+        .spacer.battle-history + h2.battle-history::before {
+            content: "⇌ ";
+            opacity: 0.2;
+        }
+        
+        .chat.message-error {
+            color: #bd5252;
+            &::before {
+                content: "⧗  ";	
+            }
+        }
+        
+    /**Minor UI Tweaks**/
+        .userlist-minimized {
+            width: 80px;
+        }
+        
+        .tabbar {
+            a.closable {
+                padding-right: 4px;
+                min-width: 35px;
+            }
+            
+            .closebutton,
+            a.cur+.closebutton {
+                transform: scale(0.7);
+                right: -4px;
+                top: 0px
+            }
+        }
+        
+        
+    /**Battle UI Tweaks**/
+        
+        .turn {
+            background-color: #0000;
+            border: none;
+            color: #333;
+            -webkit-text-stroke: 0.01em white;
+            left: 10px;
+        }
+        
+        .leftbar, .rightbar {
+            background-color: #0000;
+            border-right: none;
+            border-left: none;
+            color: #333;
+            transform: scale(0.7);
+        }
+        
+        .trainer {
+            &>strong {
+                font-size: 100%;
+                color: #2b2b2b;
+                text-shadow: 0 0.25px 2px #fff;
+            }
+            &-near {
+                bottom: 20px;
+                left: -20px;
+                &>.trainersprite {
+                    transform: matrix(-0.8,0,0,0.8,0,0) !important;
+                    margin-left: 0px;
+                }
+                &>strong {
+                    text-align: left;
+                    padding-left: 10px;
+                }
+            }
+        
+            &-far {
+                top: -10px;
+                right: -25px;
+                &>.teamicons {
+                    transform: translate(15px, -160px);
+                }
+                &>.trainersprite {
+                    transform: matrix(0.8,0,0,0.8,0,0) !important;
+                    margin-right: 0px;
+                }
+                &>strong {
+                    text-align: right;
+                    padding-right: 10px;
+                }
+            }
+        }
+        
+        .statbar>strong>small {
+            font-size: xx-small;
+        }
+        
+        .moveselect,
+        .switchselect {
+            button {
+                visibility: hidden;
+                height: 15px;
+            }
+        }
+        }
