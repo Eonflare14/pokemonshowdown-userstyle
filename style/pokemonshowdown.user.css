@@ -324,7 +324,7 @@
   }
   /**Chat**/
   .chat small {
-    font-size: var(--chatFontSizePx);
+    font-size: 6pt;
   }
   .chat .utilichart, .chat .utilichart .result [class$=desccol] {
     width: 100%;
