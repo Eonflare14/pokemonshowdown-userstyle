@@ -3,7 +3,6 @@
 @name PS! Tweaks
 @namespace Eon
 @version 1.0.0
-#@var <type> <name>   <label>        <default value>
 @var text   myBorder "Border style" 3px dotted blue
 ==/UserStyle==  */
 @-moz-document domain("play.pokemonshowdown.com"), domain("psim.us") {
