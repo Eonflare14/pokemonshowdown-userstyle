@@ -1,0 +1,423 @@
+@charset "UTF-8";
+/* ==UserStyle==
+@name PS! Tweaks
+@namespace Eon
+@version 1.0.0
+#@var <type> <name>   <label>        <default value>
+@var text   myBorder "Border style" 3px dotted blue
+==/UserStyle==  */
+@-moz-document domain("play.pokemonshowdown.com"), domain("psim.us") {
+  /**Custom Room Names**/
+  .roomtab span::after {
+    text-indent: 0;
+    display: block;
+    line-height: initial;
+  }
+  .tabbar a.button {
+    min-width: 10px;
+  }
+  .roomtab[href="/tournaments"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/tournaments"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🆃ours";
+  }
+  .roomtab[href="/toursminigames"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/toursminigames"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🆃MG";
+  }
+  .roomtab[href="/toursplaza"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/toursplaza"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🆃Plaza";
+  }
+  .roomtab[href="/othermetas"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/othermetas"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "OM";
+  }
+  .roomtab[href="/randombattles"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/randombattles"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Rand";
+  }
+  .roomtab[href="/anythinggoes"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/anythinggoes"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "AG";
+  }
+  .roomtab[href="/overused"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/overused"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "OU";
+  }
+  .roomtab[href="/monotype"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/monotype"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+  }
+  .roomtab[href="/Mono"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/Mono"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+  }
+  .roomtab[href="/ndothertiers"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/ndothertiers"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🅽OT";
+  }
+  .roomtab[href="/nationaldexou"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/nationaldexou"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🅽OU";
+  }
+  .roomtab[href="/nationaldexuu"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/nationaldexuu"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🅽UU";
+  }
+  .roomtab[href="/nationaldexmonotype"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/nationaldexmonotype"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "🅽Mono";
+  }
+  .roomtab[href="/development"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/development"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Dev";
+  }
+  .roomtab[href="/dungeonsdragons"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/dungeonsdragons"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "D&D";
+  }
+  .roomtab[href="/gamecorner"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/gamecorner"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "GC";
+  }
+  .roomtab[href="/healthfitness"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/healthfitness"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "H&F";
+  }
+  .roomtab[href="/pokemongames"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/pokemongames"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Games";
+  }
+  .roomtab[href="/ruinsofalph"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/ruinsofalph"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "RoA";
+  }
+  .roomtab[href="/scavengers"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/scavengers"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Scav";
+  }
+  .roomtab[href="/tcgtabletop"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/tcgtabletop"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Table";
+  }
+  .roomtab[href="/techcode"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/techcode"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Tech";
+  }
+  .roomtab[href="/thehappyplace"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/thehappyplace"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "THP";
+  }
+  .roomtab[href="/thelibrary"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/thelibrary"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Lib";
+  }
+  .roomtab[href="/traineracademy"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/traineracademy"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "TA";
+  }
+  .roomtab[href="/wifi"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/wifi"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "WiFi";
+  }
+  .roomtab[href="/boardgames"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/boardgames"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "BGames";
+  }
+  .roomtab[href="/thecafe"] span {
+    font-size: 10px;
+    display: inline;
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .roomtab[href="/thecafe"] span::after {
+    text-indent: 0px;
+    line-height: 1em;
+    content: "Cafe";
+  }
+  /**Chat**/
+  .chat small {
+    font-size: 6pt;
+  }
+  .chat .utilichart, .chat .utilichart .result [class$=desccol] {
+    width: 100%;
+    word-wrap: break-word;
+    white-space: wrap;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  /**Battle Chat Icons**/
+  .spacer.battle-history + .battle-history small {
+    font-weight: bold;
+    color: #6f81d9;
+  }
+  .spacer.battle-history + .battle-history small::before {
+    content: "☀ ";
+  }
+  .spacer.battle-history + h2.battle-history::before {
+    content: "⇌ ";
+    opacity: 0.2;
+  }
+  .chat.message-error {
+    color: #bd5252;
+  }
+  .chat.message-error::before {
+    content: "⧗  ";
+  }
+  /**Minor UI Tweaks**/
+  .userlist-minimized {
+    width: 80px;
+  }
+  .tabbar a.closable {
+    padding-right: 4px;
+    min-width: 35px;
+  }
+  .tabbar .closebutton,
+  .tabbar a.cur + .closebutton {
+    transform: scale(0.7);
+    right: -4px;
+    top: 0px;
+  }
+  /**Battle UI Tweaks**/
+  .turn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #333;
+    -webkit-text-stroke: 0.01em white;
+    left: 10px;
+  }
+  .leftbar, .rightbar {
+    background-color: rgba(0, 0, 0, 0);
+    border-right: none;
+    border-left: none;
+    color: #333;
+    transform: scale(0.7);
+  }
+  .trainer > strong {
+    font-size: 100%;
+    color: #2b2b2b;
+    text-shadow: 0 0.25px 2px #fff;
+  }
+  .trainer-near {
+    bottom: 20px;
+    left: -20px;
+  }
+  .trainer-near > .trainersprite {
+    transform: matrix(-0.8, 0, 0, 0.8, 0, 0) !important;
+    margin-left: 0px;
+  }
+  .trainer-near > strong {
+    text-align: left;
+    padding-left: 10px;
+  }
+  .trainer-far {
+    top: -10px;
+    right: -25px;
+  }
+  .trainer-far > .teamicons {
+    transform: translate(15px, -160px);
+  }
+  .trainer-far > .trainersprite {
+    transform: matrix(0.8, 0, 0, 0.8, 0, 0) !important;
+    margin-right: 0px;
+  }
+  .trainer-far > strong {
+    text-align: right;
+    padding-right: 10px;
+  }
+  .statbar > strong > small {
+    font-size: xx-small;
+  }
+  .moveselect button,
+  .switchselect button {
+    visibility: hidden;
+    height: 15px;
+  }
+}
