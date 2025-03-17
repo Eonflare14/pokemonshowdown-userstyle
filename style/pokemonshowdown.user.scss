@@ -3,10 +3,12 @@
 @namespace Eon
 @version 1.0.1
 @updateurl https://github.com/Eonflare14/pokemonshowdown-userstyle/raw/refs/heads/main/style/pokemonshowdown.user.css
-@var number chatFontSizePx "Chat font size" [6, "px"]
+@var color battleHistoryColor "\"Battle History\" Colour" #6f81d9
+@var color battleErrorColor "Battle Timer Colour" #bd5252
 ==/UserStyle==  */
+@use ".\\var.scss" as var;
 @-moz-document domain("play.pokemonshowdown.com"), domain("psim.us") {
-    
+
     /**Custom Room Names**/
         .roomtab span::after {
             text-indent: 0;
@@ -16,41 +18,8 @@
         .tabbar a.button {
             min-width: 10px;
         }
-    
-        $replace-rooms: 
-        /**Tours**/
-        "tournaments" "🆃ours",
-        "toursminigames" "🆃MG",
-        "toursplaza" "🆃Plaza",
-        /**Formats**/
-        "othermetas" "OM",
-        "randombattles" "Rand",
-        "anythinggoes" "AG",
-        "overused" "OU",
-        "monotype", "Mono",
-        /*Formats/Natdex*/
-        "ndothertiers" "🅽OT",
-        "nationaldexou" "🅽OU",
-        "nationaldexuu" "🅽UU",
-        "nationaldexmonotype" "🅽Mono",
-        /**Others**/
-        "development" "Dev",
-        "dungeonsdragons" "D&D",
-        "gamecorner" "GC",
-        "healthfitness" "H&F",
-        "pokemongames" "Games",
-        "ruinsofalph" "RoA",
-        "scavengers" "Scav",
-        "tcgtabletop" "Table",
-        "techcode" "Tech",
-        "thehappyplace" "THP",
-        "thelibrary" "Lib",
-        "traineracademy" "TA",
-        "wifi" "WiFi",
-        "boardgames" "BGames",
-        "thecafe" "Cafe";
 
-        @each $tab-link, $replace-text in $replace-rooms {
+        @each $tab-link, $replace-text in var.$replace-rooms {
             .roomtab[href="/#{$tab-link}"] {
                 span {
                     font-size: 10px;
@@ -71,7 +40,7 @@
         
     .chat {
             & small {
-                font-size: var(--chatFontSizePx);
+                font-size: 6px;
             }
             
             & .utilichart,
@@ -87,7 +56,7 @@
         
         .spacer.battle-history + .battle-history small {
             font-weight: bold;
-            color: #6f81d9;
+            color: var(--battleHistoryColor);
             &::before {
                 content: "☀ ";
             }
@@ -99,7 +68,7 @@
         }
         
         .chat.message-error {
-            color: #bd5252;
+            color: var(--battleErrorColor);
             &::before {
                 content: "⧗  ";	
             }
