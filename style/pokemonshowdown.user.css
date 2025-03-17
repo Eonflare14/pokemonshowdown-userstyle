@@ -2,9 +2,10 @@
 /* ==UserStyle==
 @name PS! Tweaks
 @namespace Eon
-@version 1.0.1
-@updateURL https://github.com/Eonflare14/pokemonshowdown-userstyle/raw/refs/heads/main/style/pokemonshowdown.user.css
-@var number chatFontSizePx "Chat font size" [6, "px"]
+@version 1.0.2
+@updateurl https://github.com/Eonflare14/pokemonshowdown-userstyle/raw/refs/heads/main/style/pokemonshowdown.user.css
+@var color battleHistoryColor "\"Battle History\" Colour" #6f81d9
+@var color battleErrorColor "Battle Timer Colour" #bd5252
 ==/UserStyle==  */
 @-moz-document domain("play.pokemonshowdown.com"), domain("psim.us") {
   /**Custom Room Names**/
@@ -324,7 +325,7 @@
   }
   /**Chat**/
   .chat small {
-    font-size: 6pt;
+    font-size: 6px;
   }
   .chat .utilichart, .chat .utilichart .result [class$=desccol] {
     width: 100%;
@@ -336,7 +337,7 @@
   /**Battle Chat Icons**/
   .spacer.battle-history + .battle-history small {
     font-weight: bold;
-    color: #6f81d9;
+    color: var(--battleHistoryColor);
   }
   .spacer.battle-history + .battle-history small::before {
     content: "☀ ";
@@ -346,7 +347,7 @@
     opacity: 0.2;
   }
   .chat.message-error {
-    color: #bd5252;
+    color: var(--battleErrorColor);
   }
   .chat.message-error::before {
     content: "⧗  ";
